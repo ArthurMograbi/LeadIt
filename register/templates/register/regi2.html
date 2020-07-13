@@ -1,0 +1,21 @@
+<html>
+<body>
+{% if vec %}
+	<h2>Essa parte é opcional mas, quanto mais você preencher, mais {{ vec.name }} ganha</h2>
+	<h3><i> É rapidinho, eu prometo...</i></h3>
+{% else %}
+    <p>Link Inválido :( \n Pede pro seu amigo dnv</p>
+{% endif %}
+{% if err %}
+    <h2>{{err}} :(</h2>
+{% endif %}
+</body>
+<form action="{% url 'regi2' vec.code cli.code %}" method="post">
+{% csrf_token %}
+<p>Passa o zap:</p> <input type="text" name="cel" id="z">
+<p>E o email também:</p> <input type="text" name="email" id="e">
+<p>Quer botar seu CPF?</p> <input type="text" name="cpf" id="c">
+<br>
+<input type="submit" value="Continuar">
+</form>
+</html>

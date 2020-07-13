@@ -1,0 +1,22 @@
+<html>
+<body>
+{% if vec %}
+	<h2>Vamos ajudar seu amigo, {{ vec.name }}? </h2>
+	<h3><i> É rapidinho, eu prometo...</h3>
+{% else %}
+    <p>Link Inválido :( \n Pede pro seu amigo dnv</p>
+{% endif %}
+{% if err %}
+    <h2>{{err}} :(</h2>
+{% endif %}
+</body>
+<form action="{% url 'regi' vec.code %}" method="post">
+{% csrf_token %}
+<p>Qual é seu nomezinho? </p> <input type="text" name="nome" id="n">
+<p>Quantos anos cê tem? <i>Não vale mentir que eu vou saber ein...</i></p> <input type="text" name="idade" id="i">
+<p>Cê trabalha com o que?</p> <input type="text" name="trabalho" id="t">
+<p>Tenho filhos: <input type="radio" name="filhos" id="f" value="1"> </p>
+
+<input type="submit" value="Continuar">
+</form>
+</html>

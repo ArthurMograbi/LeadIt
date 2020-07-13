@@ -1,0 +1,13 @@
+<html>
+<body>
+{% if vecs %}
+    <h2>Líderes da competição</h2>
+    <h3>Os primeiros três vão ganhar prêmios exclusivos!</h3>
+    <ul>
+    {% for v in vecs %}
+        <li>{{forloop.counter}} - {{v.name}} - {{v.join_date}} - {{v.balanca}} pontos</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+</body>
+</html>

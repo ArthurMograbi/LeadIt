@@ -1,0 +1,12 @@
+<html>
+<body>
+{% if vec %}
+	<h2>Parabéns, {{ vec.name }}!</h2>
+	<h3>Você está registrado agora.<br>
+	Seu link é <b>blabla.com/amigo/{{vec.code}}/:)</b> <br>
+	Já pode ir passando!</h3>
+{% else %}
+    <p>Link Inválido :(</p>
+{% endif %}
+</body>
+</html>
